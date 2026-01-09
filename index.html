@@ -3,184 +3,307 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Vivah Aura | Wedding Photography & Films</title>
+
+<title>Professional Studio Buxar | Wedding Photography & Films</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 
+<script>
+const BRAND = {
+  name: "Professional Studio Buxar",
+  tagline: "Wedding • Pre Wedding • Cinematic Films",
+  phone: "+91 62999 60470",
+  email: "professionalstudiobuxar@gmail.com",
+  location: "Syndicate Infront of Old Anarkali Hospital, Buxar, Bihar 802101"
+};
+</script>
+
 <style>
 :root{
-  --black:#0b0b0b;
-  --gold:#c9a24d;
-  --soft:#e7cf8a;
+--black:#0b0b0b;
+--gold:#c9a24d;
+--soft:#e7cf8a;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Manrope,sans-serif;background:var(--black);color:#fff}
 h1,h2,h3,h4{font-family:Cinzel,serif}
 a{text-decoration:none;color:inherit}
 
-/* Intro */
-.intro{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999}
-.intro h1{color:var(--gold);font-size:56px;animation:zoom 2.5s forwards}
-.intro p{opacity:0;margin-top:12px;letter-spacing:3px;color:#aaa;animation:fade 1.5s forwards 1.5s}
-@keyframes zoom{from{opacity:0;transform:scale(.6)}to{opacity:1}}
-@keyframes fade{to{opacity:1}}
+/* INTRO */
+.intro{
+position:fixed;inset:0;background:#000;
+display:flex;align-items:center;justify-content:center;
+flex-direction:column;z-index:9999
+}
+.intro h1{color:var(--gold);font-size:56px}
+.intro p{margin-top:14px;letter-spacing:3px;color:#aaa}
+.loader{
+width:60px;height:60px;
+border:3px solid rgba(201,162,77,.3);
+border-top:3px solid var(--gold);
+border-radius:50%;
+margin-top:25px;
+animation:spin 1s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* Header */
+/* HEADER */
 header{height:100vh;position:relative;overflow:hidden}
-.slides img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0}
+.slides img{
+position:absolute;width:100%;height:100%;
+object-fit:cover;opacity:0
+}
 .slides img:nth-child(1){animation:slide 18s infinite}
 .slides img:nth-child(2){animation:slide 18s infinite 6s}
 .slides img:nth-child(3){animation:slide 18s infinite 12s}
-@keyframes slide{0%{opacity:0}10%{opacity:1}30%{opacity:1}40%{opacity:0}}
-header::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:1}
+@keyframes slide{
+0%{opacity:0}10%{opacity:1}30%{opacity:1}40%{opacity:0}
+}
+header::after{
+content:"";position:absolute;inset:0;
+background:rgba(0,0,0,.6);z-index:1
+}
 
-/* Hero */
-.hero{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+/* HERO */
+.hero{
+position:relative;z-index:2;height:100%;
+display:flex;flex-direction:column;
+align-items:center;justify-content:center;
+text-align:center
+}
 .hero h1{color:var(--gold);font-size:56px}
 .hero p{margin-top:10px;color:#ddd}
-.hero .btns{margin-top:35px;display:flex;gap:20px;flex-wrap:wrap}
-.hero a{padding:14px 40px;border-radius:60px;font-family:Cinzel,serif;letter-spacing:2px;transition:.3s}
+.hero .btns{
+margin-top:35px;display:flex;gap:20px;flex-wrap:wrap
+}
+.hero a{
+padding:14px 40px;border-radius:60px;
+font-family:Cinzel,serif;letter-spacing:2px;
+transition:.3s
+}
 .hero a:hover{transform:scale(1.05)}
 .reserve{border:2px solid var(--gold);color:var(--gold)}
 .enquiry{background:var(--gold);color:#000}
 
-/* Sections */
+/* SECTIONS */
 section{padding:90px 6%}
 .section-title{text-align:center;margin-bottom:50px}
 .section-title h2{color:var(--gold)}
-.section-title p{color:#aaa;margin-top:6px}
 
-/* Services */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:#111;border:1px solid rgba(201,162,77,.3);padding:25px;border-radius:16px;text-align:center;transition:.3s}
+/* OWNER */
+.owner-box{
+max-width:900px;margin:auto;
+display:flex;gap:40px;
+align-items:center;flex-wrap:wrap;
+background:#111;border:1px solid rgba(201,162,77,.4);
+padding:40px;border-radius:22px
+}
+.owner-box img{
+width:180px;height:180px;
+object-fit:cover;border-radius:50%;
+border:3px solid var(--gold)
+}
+.owner-box h3{color:var(--gold)}
+.owner-box p{
+margin-top:10px;font-style:italic;
+color:#ccc;line-height:1.8
+}
+.owner-box span{
+display:block;margin-top:15px;
+color:var(--soft);letter-spacing:2px
+}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px
+}
+.card{
+background:#111;border:1px solid rgba(201,162,77,.3);
+padding:25px;border-radius:16px;
+text-align:center;transition:.3s
+}
 .card:hover{transform:translateY(-10px);border-color:var(--gold)}
-.card h4{color:var(--soft);margin-bottom:10px}
-.card p{font-size:14px;color:#ccc}
+.card h4{color:var(--soft)}
 
-/* Video */
-.video iframe{width:100%;height:450px;border-radius:18px;border:2px solid var(--gold)}
+/* INSTAGRAM */
+.insta{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px
+}
+.insta iframe{
+width:100%;height:450px;
+border:none;border-radius:16px
+}
 
-/* Instagram */
-.insta{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.insta iframe{width:100%;height:500px;border:none;border-radius:16px;background:#000}
+/* ENQUIRY FORM */
+.form-box{
+max-width:900px;margin:auto;
+background:#111;border:1px solid rgba(201,162,77,.4);
+padding:50px;border-radius:22px
+}
+form{
+display:grid;grid-template-columns:1fr 1fr;gap:20px
+}
+form input,form textarea{
+background:#000;border:1px solid rgba(201,162,77,.4);
+padding:14px;border-radius:10px;color:#fff
+}
+form textarea{grid-column:span 2;min-height:120px}
+form button{
+grid-column:span 2;
+padding:16px;border:none;border-radius:40px;
+background:var(--gold);color:#000;
+font-family:Cinzel,serif;
+letter-spacing:2px;font-size:16px;
+cursor:pointer
+}
 
-/* Enquiry */
-.form-box{max-width:900px;margin:auto;background:#111;border:1px solid rgba(201,162,77,.3);padding:40px;border-radius:18px}
-.form-box input{width:100%;padding:12px;margin-bottom:14px;background:#000;border:1px solid rgba(201,162,77,.4);color:#fff;border-radius:12px}
-.form-box button{padding:14px 45px;border:none;border-radius:60px;background:var(--gold);color:#000;font-family:Cinzel,serif}
-
-/* Footer */
-footer{background:#000;border-top:2px solid rgba(201,162,77,.4);padding:110px 6% 40px}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
-footer h3{color:var(--gold)}
-footer p,a{color:#aaa;font-size:14px}
-.copy{text-align:center;margin-top:40px;color:#666;font-size:12px}
+/* BIG FOOTER */
+footer{
+background:#000;
+border-top:2px solid rgba(201,162,77,.4);
+padding:90px 6% 40px
+}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:40px;margin-bottom:50px
+}
+footer h4{color:var(--gold);margin-bottom:15px}
+footer p,footer li{color:#aaa;font-size:14px;line-height:1.8}
+footer ul{list-style:none}
+.footer-brand h2{color:var(--gold)}
+.copy{text-align:center;color:#666;font-size:12px}
 
 @media(max-width:768px){
 .hero h1{font-size:36px}
-.video iframe{height:220px}
-.insta iframe{height:400px}
+.owner-box{justify-content:center;text-align:center}
+form{grid-template-columns:1fr}
+form textarea,form button{grid-column:span 1}
 }
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div class="intro" id="intro">
-<h1>The Vivah Aura</h1>
-<p>Wedding Photography & Films</p>
+<h1><script>document.write(BRAND.name)</script></h1>
+<div class="loader"></div>
+<p><script>document.write(BRAND.tagline)</script></p>
 </div>
 
 <script>
 setTimeout(()=>{
 document.getElementById("intro").style.opacity="0";
 setTimeout(()=>document.getElementById("intro").remove(),800);
-},3000);
+},2000);
 </script>
 
+<!-- HEADER -->
 <header>
 <div class="slides">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1950&q=80">
-<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1950&q=80">
-<img src="https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=1950&q=80">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+<img src="https://images.unsplash.com/photo-1530023367847-a683933f4172">
 </div>
 
 <div class="hero">
-<h1>The Vivah Aura</h1>
-<p>Wedding | Pre-Wedding | Candid</p>
-<p style="font-size:14px;color:#aaa">Sheikhpura, Bihar · Available Pan India</p>
+<h1><script>document.write(BRAND.name)</script></h1>
+<p><script>document.write(BRAND.tagline)</script></p>
+<p style="font-size:14px;color:#aaa"><script>document.write(BRAND.location)</script></p>
+
 <div class="btns">
-<a class="reserve" href="https://wa.me/918406814542">Reserve Your Date</a>
+<a class="reserve" href="https://wa.me/916299960470">Reserve Your Date</a>
 <a class="enquiry" href="#enquiry">Enquiry</a>
 </div>
 </div>
 </header>
 
+<!-- OWNER -->
+<section>
+<div class="owner-box">
+<img src="https://via.placeholder.com/300">
+<div>
+<h3>Owner’s Note</h3>
+<p>
+“Photography is not just taking photos,  
+it’s about capturing emotions and memories that stay forever.”
+</p>
+<span>— Sonu (Founder)</span>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
 <section>
 <div class="section-title"><h2>Our Services</h2></div>
 <div class="services">
-<div class="card"><h4>Wedding Photography</h4><p>Timeless Wedding Stories</p></div>
-<div class="card"><h4>Cinematic Films</h4><p>Movie-Style Wedding Films</p></div>
-<div class="card"><h4>Pre-Wedding</h4><p>Romantic Storytelling</p></div>
-<div class="card"><h4>Candid Photography</h4><p>Natural Emotional Moments</p></div>
-<div class="card"><h4>Drone Coverage</h4><p>Aerial Cinematics</p></div>
-<div class="card"><h4>Events Coverage</h4><p>Professional Event Shoots</p></div>
+<div class="card"><h4>Wedding Photography</h4></div>
+<div class="card"><h4>Cinematic Films</h4></div>
+<div class="card"><h4>Pre-Wedding Shoot</h4></div>
+<div class="card"><h4>Candid Photography</h4></div>
+<div class="card"><h4>Traditional Coverage</h4></div>
+<div class="card"><h4>Event Shoots</h4></div>
 </div>
 </section>
 
-<section class="video">
-<div class="section-title"><h2>Watch Our Film</h2></div>
-<iframe src="https://www.youtube.com/embed/3sINLK_O-YU" allowfullscreen></iframe>
-</section>
-
-<section>
-<div class="section-title"><h2>Our Work</h2></div>
-<div class="insta">
-<iframe src="https://www.instagram.com/p/DLOY2j8CBvB/embed"></iframe>
-<iframe src="https://www.instagram.com/p/DLJN931vbQX/embed"></iframe>
-<iframe src="https://www.instagram.com/p/DLG2kUZvBOp/embed"></iframe>
-<iframe src="https://www.instagram.com/p/DQIubwfD_i5/embed"></iframe>
-<iframe src="https://www.instagram.com/p/DQGwT6gDwQ6/embed"></iframe>
-<iframe src="https://www.instagram.com/p/DQA10YWj78H/embed"></iframe>
-</div>
-</section>
-
+<!-- ENQUIRY -->
 <section id="enquiry">
-<div class="section-title"><h2>Enquiry</h2><p>Book Your Date</p></div>
+<div class="section-title"><h2>Enquiry Now</h2></div>
 <div class="form-box">
-<form onsubmit="event.preventDefault();window.location.href='https://wa.me/918406814542?text='+encodeURIComponent('Hi The Vivah Aura, I want to enquire.');">
-<input placeholder="Your Name" required>
-<input placeholder="Event Date" required>
-<input placeholder="Event Location" required>
-<input placeholder="Event Type" required>
-<div style="text-align:center">
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="email" placeholder="Email Address">
+<input type="text" placeholder="Event Date">
+<textarea placeholder="Tell us about your event"></textarea>
 <button type="submit">Send Enquiry</button>
-</div>
 </form>
 </div>
 </section>
 
+<!-- BIG FOOTER -->
 <footer>
 <div class="footer-grid">
+<div class="footer-brand">
+<h2>Professional Studio Buxar</h2>
+<p>Premium wedding photography & cinematic films capturing timeless memories.</p>
+</div>
+
 <div>
-<h3>The Vivah Aura</h3>
-<p>Chandani Chowk, Sheikhpura, Bihar 811105</p>
-<p>✉️ thevivahaura@gmail.com</p>
+<h4>Contact</h4>
+<p>📞 <script>document.write(BRAND.phone)</script></p>
+<p>📍 <script>document.write(BRAND.location)</script></p>
+<p>✉ <script>document.write(BRAND.email)</script></p>
 </div>
+
 <div>
-<h3>Contact</h3>
-<p>📞 +91 84068 14542</p>
-<p>📞 +91 84097 78303</p>
+<h4>Services</h4>
+<ul>
+<li>Wedding Photography</li>
+<li>Pre-Wedding Shoot</li>
+<li>Cinematic Wedding Films</li>
+<li>Candid Photography</li>
+<li>Events Coverage</li>
+</ul>
 </div>
+
 <div>
-<h3>Social</h3>
-<p><a href="https://www.instagram.com/the.vivah.aura/">Instagram</a></p>
-<p><a href="https://www.facebook.com/profile.php?id=100069787068813">Facebook</a></p>
-<p><a href="https://www.youtube.com/@thevivahaura">YouTube</a></p>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#enquiry">Enquiry</a></li>
+<li><a href="https://wa.me/916299960470">WhatsApp</a></li>
+</ul>
 </div>
 </div>
-<p class="copy">© 2026 The Vivah Aura · All Rights Reserved</p>
+
+<p class="copy">© 2026 Professional Studio Buxar · All Rights Reserved</p>
 </footer>
 
 </body>
